@@ -1,25 +1,59 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AdventureGame {
+public class TheCode {
     int lives = 3;
     int points = 0;
     ArrayList<String> inventory = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
+public static void halt(int seconds){
+    try {
+                Thread.sleep(seconds*1000);  // the second input gets timed by 1000 becayse the sleep reads in miliseconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();  // Handle the exception if the thread is interrupted
+            }
+}
 
+public void Println(){
+    System.out.println("");
+}
+
+
+public void Println(String x){
+System.out.println(x);
+}
+public void Print(String x){
+System.out.print(x);
+}
     public static void main(String[] args) {
-        AdventureGame game = new AdventureGame();
+        TheCode game = new TheCode();
         game.intro();
-        new LevelOne(game).play();
-        /*new LevelTwo(game).play();
-        new LevelThree(game).play();
-        new LevelFour(game).play();
+        new Pregame(game).play();
+        halt(2);
+       new LevelOne(game).play();
         new LevelFive(game).play();
-        new LevelSix(game).play();
-        new LevelSeven(game).play();
+          new LevelSix(game).play();
+          new LevelSeven(game).play();
         new LevelEight(game).play();
-        new LevelNine(game).play();
+          new LevelNine(game).play();
+          /*new LevelTwo(game).play();
+        
+        new LevelThree(game).play();
+        
+        new LevelFour(game).play();
+        
+        
+        
+      
+        
+        
+        
+        
+        
+      
+        
         new LevelTen(game).play();
+        
         game.endGame();*/
     }
   public void intro() {
@@ -29,8 +63,6 @@ public class AdventureGame {
         printStats();
         System.out.println("You wake up on a cold, damp ground. Before you stands a grand, ancient"+
          "castle shrouded in mist. The only way forward is a drawbridge raised high above a swirling moat");
-    System.out.println("do you: .Head towards the moat., or .investigate. a statue of a carrige off to the side");
-if(scan.nextLine().equalsIgnoreCase("Head towards the moat")){
     
 }
 
@@ -39,7 +71,7 @@ if(scan.nextLine().equalsIgnoreCase("Head towards the moat")){
 
 
 
-}
+
 
     public void endGame() {
         System.out.println("\nGame Over!");
