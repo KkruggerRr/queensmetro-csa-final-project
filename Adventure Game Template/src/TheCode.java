@@ -31,6 +31,7 @@ System.out.print(x);
         new Pregame(game).play();
         halt(2);
        new LevelOne(game).play();
+       new LevelTwo(game).play();
         new LevelFive(game).play();
           new LevelSix(game).play();
           new LevelSeven(game).play();
