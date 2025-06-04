@@ -25,16 +25,16 @@ class LevelTen extends TheCode {
         
         
         
-            if(input2.equalsIgnoreCase("Pass through quickl")){
-        Println("you move through the vault looking away from the alluring riches and head into the next room.");
+            if(input2.equalsIgnoreCase("descend")){
+        Println("");
         }
         if(input2.equalsIgnoreCase("Investigate the riches")){
 
-            Println("While searching you accidentally knock over some gold bars and one manages to land on your foot,");
+            Println("You go down the small passageway beneath the stairs and find a small room that has cleaning equipment ans supplies.");
             halt(2);
-            Println("while you recover from the pain you notice a note that was beneath the bars that read");
+            Println("you find a small room with a lit candle and a note left on a desk, crinkled and slightly charred that read,");
             halt(3);
-            Println("\"The Queen labored three days. No doctor could explain how the child lived. No breath at first—then a cry that cracked every lantern in the hall. The priest who baptized her went blind the next morning.\" ");
+            Println("\"I hear her laugh when I sleep. Not the haunting kind. The real one. I remember it. I cling to it. And still, I sent them all away—those who questioned the west wing. I let her grow up in that cursed place. The castle is mine. The guilt is mine. Let it rot with me." + "-King Alden");
 
  halt(3);
  System.out.println("After inspecting more there is nothing else of interest, you take a gold bar for good luck +1 life");
