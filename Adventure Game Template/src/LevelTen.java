@@ -1,10 +1,10 @@
-class LevelTen extends TheCode {
-    TheCode game;
-    LevelTen(TheCode game) {
+class LevelTen extends CastleofMysteries {
+    CastleofMysteries game;
+    LevelTen(CastleofMysteries game) {
         this.game = game;
     }
     public void play() {
-        Println("do you: .Descend. into the shadowy servants' passage beneath the stairs, or .Ascend. the grand staircase driectly Peak of the castle.");
+        Println("do you: |Descend| into the shadowy servants' passage beneath the stairs, or |Ascend| the grand staircase directly to the peak of the castle.");
           
         String input2="";        
         
@@ -14,7 +14,7 @@ class LevelTen extends TheCode {
             String input = scan.nextLine();
 
             input2=input;
-            if (input.equalsIgnoreCase("descend") || input.equalsIgnoreCase("acsend")) {
+            if (input.equalsIgnoreCase("descend") || input.equalsIgnoreCase("ascend")) {
                 
                 success = true;
             } 
@@ -25,10 +25,10 @@ class LevelTen extends TheCode {
         
         
         
-            if(input2.equalsIgnoreCase("descend")){
+            if(input2.equalsIgnoreCase("ascend")){
         Println("");
         }
-        if(input2.equalsIgnoreCase("Investigate the riches")){
+        if(input2.equalsIgnoreCase("descend")){
 
             Println("You go down the small passageway beneath the stairs and find a small room that has cleaning equipment ans supplies.");
             halt(2);
@@ -53,33 +53,34 @@ game.inventory.add("note5");
         Println();
         halt(1);
        
-        Println("You find youself in a grand large room thats covered in dust, a sign of lost glory and what once was");
+        Println("Finally, you reach the top of the tower.");
         halt(2);
-        Println("Suddenly a voice echoes:\"I have branches, but no fruit, trunk, or leaves. What am I?\"");
+        peak();
         halt(2);
-        
+        Println("The wind howls, and the final question emerges from the void");
+        halt(2);
+        Println("\"What can’t talk but will reply when spoken to?\"");
         
         boolean success2 = false;
        while (!success2 && lives > 0) {
             Print("Enter your answer: ");
             String input3 = scan.nextLine();
 
-            if (input3.equalsIgnoreCase("a family tree") || input3.equalsIgnoreCase("family tree")) {
+            if (input3.equalsIgnoreCase("an echo") || input3.equalsIgnoreCase("echo")|| input3.equalsIgnoreCase("a echo")) {
                 Println();
-                Println("The throne slides aside, revealing a hidden staircase.");
-                halt(2);
-                Println("There is a small passageway to the side of the staircase that goes down, it looks like it was used by servants once.");
+                Println("The window opens revealing the courtyard below");
                 
+                points+=10;
                 success2 = true;
             } else {
-                Println("The room begins to fill with darkness, and you lose a life.");
+                Println("The floors tilt steeply and slide back down the stairs and lose a life.");
                 lives--;
-
+points-=pl();
                 if (lives > 0) {
                     Println();
                     Println("Try again. Lives remaining: " + lives);
                 } else {
-                    Println("Game over! You have no lives left.");
+                    game.endGame();
                 }
             }
         }

@@ -1,10 +1,10 @@
 
 
-public class Pregame extends TheCode {
+public class Pregame extends CastleofMysteries {
 
-        private TheCode game;
+        private CastleofMysteries game;
 
-        public Pregame(TheCode game) {
+        public Pregame(CastleofMysteries game) {
         this.game = game;
     }
 
@@ -13,7 +13,7 @@ public class Pregame extends TheCode {
         
         String input2 ="";
         
-            Println("do you: .Head towards the moat., or .investigate. a statue of a carrige off to the side");
+            Println("Do you: |Head towards the moat|, or |investigate| a statue of a carrige off to the side.");
             
         
         
@@ -44,12 +44,13 @@ input2=input;
 
  halt(3);
 
-System.out.println("Upon closer inspection, you notice theres a small message crudely carved into one of the wheels of the stone carrige that reads,");
+Println("Upon closer inspection, you notice theres a small message crudely carved into one of the wheels of the stone carrige that reads,");
+halt(3);
+Println("\"They say the castle was built atop a graveyard of forgotten kings. Not ours—older, deeper.");
 halt(2);
-System.out.println("\"They say the castle was built atop a graveyard of forgotten kings. Not ours—older, deeper.");
+Println("Stone coffins sealed with symbols no scholar could name. The foundation cursed before the first stone was laid.\"");
 halt(2);
-System.out.print("Stone coffins sealed with symbols no scholar could name. The foundation cursed before the first stone was laid.\"");
- System.out.println(" The message makes you a bit more cautious of your surroundings,+1 life. You move forward towards the moat.");
+Println("The message makes you a bit more cautious of your surroundings,+1 life. You move forward towards the moat.");
 halt(3);
  game.lives++;
 game.inventory.add("note1");

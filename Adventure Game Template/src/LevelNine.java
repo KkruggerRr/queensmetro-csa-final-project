@@ -1,6 +1,6 @@
-class LevelNine extends TheCode {
-    TheCode game;
-    LevelNine(TheCode game) {
+class LevelNine extends CastleofMysteries {
+    CastleofMysteries game;
+    LevelNine(CastleofMysteries game) {
         this.game = game;
     }
     public void play() {
@@ -53,7 +53,9 @@ game.inventory.add("note4");
         Println();
         halt(1);
        
-        Println("You find youself in a grand large room thats covered in dust, a sign of lost glory and what once was");
+        Println("You find youself in a grand large throne room thats covered in dust, a sign of lost glory and what once was");
+        halt(2);
+        chair();
         halt(2);
         Println("Suddenly a voice echoes:\"I have branches, but no fruit, trunk, or leaves. What am I?\"");
         halt(2);
@@ -69,17 +71,17 @@ game.inventory.add("note4");
                 Println("The throne slides aside, revealing a hidden staircase.");
                 halt(2);
                 Println("There is a small passageway to the side of the staircase that goes down, it looks like it was used by servants once.");
-                
+                points+=10;
                 success2 = true;
             } else {
                 Println("The room begins to fill with darkness, and you lose a life.");
                 lives--;
-
+points-=pl();
                 if (lives > 0) {
                     Println();
                     Println("Try again. Lives remaining: " + lives);
                 } else {
-                    Println("Game over! You have no lives left.");
+                    game.endGame();
                 }
             }
         }

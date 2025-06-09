@@ -1,6 +1,6 @@
-class LevelEight extends TheCode {
-    TheCode game;
-    LevelEight(TheCode game) {
+class LevelEight extends CastleofMysteries {
+    CastleofMysteries game;
+    LevelEight(CastleofMysteries game) {
         this.game = game;
     }
     public void play() {
@@ -9,7 +9,9 @@ class LevelEight extends TheCode {
        Println();
        Println("As you examine the vault from the outside, you notices its run down state.");
        halt(2);
-       Println("However its old and rusty its doors reamain sealed tightly.");
+       vault();
+       halt(2);
+       Println("However old and rusty, its doors reamain sealed tightly.");
        halt(2);
        Println("A deep voice challenges you:\"What can you break, even if you never pick it up or touch it?\"");
        halt(2);
@@ -26,13 +28,13 @@ class LevelEight extends TheCode {
                 points +=10;
                 success = true;
             } else {
-                System.out.println("The vault shakes violently, and you lose a life.");
+                System.out.println("The vault shakes violently, you lose a life and some points.");
                 lives--;
-
+points-=pl();
                 if (lives > 0) {
                     System.out.println("Try again. Lives remaining: " + lives);
                 } else {
-                    System.out.println("Game over! You have no lives left.");
+                    game.endGame();
                 }
             }
         }

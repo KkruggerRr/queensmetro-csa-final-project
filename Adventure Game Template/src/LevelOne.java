@@ -1,6 +1,6 @@
-class LevelOne extends TheCode {
-    TheCode game;
-    LevelOne(TheCode game) {
+class LevelOne extends CastleofMysteries {
+    CastleofMysteries game;
+    LevelOne(CastleofMysteries game) {
         this.game = game;
     }
     public void play() {
@@ -10,6 +10,8 @@ class LevelOne extends TheCode {
        halt(1);
        
        Println("you walk towards the moat, its water moving in an odd way that makes you feel unease as the creaks of old wood can be heard from the wind"); 
+       halt(2);
+       Drawbridge();
        halt(2);
        Println("A voice echoes:\"To cross the bridge, you must answer this: What has keys but can't open locks?\"");
         
@@ -27,13 +29,13 @@ class LevelOne extends TheCode {
                 points +=10;
                 success = true;
             } else {
-                System.out.println("The moat's mist swirls ominously, and you lose a life.");
-                lives--;
-
+                System.out.println("The moat's mist swirls ominously, you lose a life and some points.");
+                lives--; 
+                points-=pl();
                 if (lives > 0) {
                     System.out.println("Try again. Lives remaining: " + lives);
                 } else {
-                    System.out.println("Game over! You have no lives left.");
+                  game.endGame();
                 }
             }
         }

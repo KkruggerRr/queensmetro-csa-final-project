@@ -1,6 +1,6 @@
-class LevelSeven extends TheCode {
-    TheCode game;
-    LevelSeven(TheCode game) {
+class LevelSeven extends CastleofMysteries {
+    CastleofMysteries game;
+    LevelSeven(CastleofMysteries game) {
         this.game = game;
     }
     public void play() {
@@ -54,6 +54,8 @@ game.inventory.add("note3");
        
         Println("Through the passageway and up some stairs you find yourself in a weird room where everything inside painted yellow.");
         halt(2);
+        yroom();
+        halt(2);
         Println("The walls whisper:\"There’s a one-story house in which everything is yellow. What color are the stairs?\"");
         halt(2);
         
@@ -68,17 +70,17 @@ game.inventory.add("note3");
                 Println("The walls recede, revealing a vault that was hidden by the walls illusion");
                 halt(2);
                 
-                
+                points+=10;
                 success2 = true;
             } else {
                 Println("The room begins to spin, and you lose a life.");
                 lives--;
-
+points-=pl();
                 if (lives > 0) {
                     Println();
                     Println("Try again. Lives remaining: " + lives);
                 } else {
-                    Println("Game over! You have no lives left.");
+                    game.endGame();
                 }
             }
         }
